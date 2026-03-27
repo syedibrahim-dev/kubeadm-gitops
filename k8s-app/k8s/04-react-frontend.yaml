@@ -1,0 +1,55 @@
+# =============================================================================
+# React Frontend — Deployment + ClusterIP Service
+# Multi-stage build result: ~15MB nginx:alpine image (from 1.2GB Node builder)
+# =============================================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-frontend
+  namespace: test-app
+  labels:
+    app: react-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-frontend
+  template:
+    metadata:
+      labels:
+        app: react-frontend
+    spec:
+      containers:
+      - name: react-frontend
+        image: ibrahimalish/node-frontend:edbf59326fc89e4373541d869514436bf87a1fb3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          name: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        resources:
+          requests:
+            memory: "16Mi"
+            cpu:    "25m"
+          limits:
+            memory: "64Mi"
+            cpu:    "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-frontend
+  namespace: test-app
+spec:
+  selector:
+    app: react-frontend
+  ports:
+  - port:       80
+    targetPort: 8080
+    name:       http
+  type: ClusterIP
