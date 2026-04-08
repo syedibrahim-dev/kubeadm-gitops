@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - ../../base
+- ../../base
 
 images:
-  - name: ibrahimalish/go-backend
-    newTag: latest
-  - name: ibrahimalish/node-frontend
-    newTag: latest
+- name: ibrahimalish/go-backend
+  newTag: 554a515c6393d6aa84c5ddb5d4210aa0544b0532
+- name: ibrahimalish/node-frontend
+  newTag: 554a515c6393d6aa84c5ddb5d4210aa0544b0532
