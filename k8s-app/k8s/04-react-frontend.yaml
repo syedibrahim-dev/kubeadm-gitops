@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: react-frontend
-        image: ibrahimalish/node-frontend:08287a619334369fee2950ceab2299b5c6dcdf16
+        image: ibrahimalish/node-frontend:7c17cba158b58530eabb6a79d7af1fa96a619dd7
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
