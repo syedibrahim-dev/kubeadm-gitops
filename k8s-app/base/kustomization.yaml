@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - 01-namespace.yaml
-  - 02-mongodb-hostpath.yaml
-  - 03-go-backend.yaml
-  - 04-react-frontend.yaml
-  - 05-ingress.yaml
+  kind: Kustomization
+  resources:
+    - 01-namespace.yaml
+    - 02-mongodb-hostpath.yaml
+    - 03-go-backend.yaml
+    - 04-react-frontend.yaml
+    - 05-ingress.yaml
