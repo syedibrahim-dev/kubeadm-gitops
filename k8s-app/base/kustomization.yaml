@@ -6,4 +6,4 @@ resources:
   - 02-mongodb-hostpath.yaml
   - 03-go-backend.yaml
   - 04-react-frontend.yaml
-  - 05-ingress.yaml
+  - 04-ingress.yaml
