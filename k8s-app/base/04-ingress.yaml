@@ -10,10 +10,6 @@ kind: Ingress
 metadata:
   name: app-ingress
   namespace: test-app
-  annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: instance
-    alb.ingress.kubernetes.io/backend-protocol: HTTP
 spec:
   ingressClassName: nginx
   rules:
