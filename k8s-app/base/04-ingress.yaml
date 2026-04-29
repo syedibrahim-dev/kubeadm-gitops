@@ -15,7 +15,14 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /api   # more specific, evaluated first
+            pathType: Prefix
+            backend:
+              service:
+                name: go-backend
+                port:
+                  number: 8080
+          - path: /      # catch-all, evaluated last
             pathType: Prefix
             backend:
               service:
