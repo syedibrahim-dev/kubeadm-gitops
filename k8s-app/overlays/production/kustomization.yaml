@@ -6,6 +6,6 @@ resources:
 
 images:
 - name: ibrahimalish/go-backend
-  newTag: ab4b944481275892f6c52a0385e3c1e8dc47daac
+  newTag: c43e4182e871ef4f856ae64cc11e9298107025af
 - name: ibrahimalish/node-frontend
-  newTag: ab4b944481275892f6c52a0385e3c1e8dc47daac
+  newTag: c43e4182e871ef4f856ae64cc11e9298107025af
